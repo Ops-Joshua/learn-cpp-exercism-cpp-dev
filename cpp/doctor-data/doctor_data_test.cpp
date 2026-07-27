@@ -18,7 +18,7 @@ TEST_CASE("Create drone from replication", "[task_2]") {
     REQUIRE(bob5.current_system == star_map::System::Sol);
     REQUIRE(bob5.generation == 2);
 }
-#if defined(EXERCISM_RUN_ALL_TESTS)
+
 TEST_CASE("Check buster mechanics", "[task_3]") {
     heaven::Vessel bob6{"Homer", 3, star_map::System::EpsilonEridani};
     REQUIRE(bob6.busters == 0);
@@ -30,7 +30,7 @@ TEST_CASE("Check buster mechanics", "[task_3]") {
     success = bob6.shoot_buster();
     REQUIRE_FALSE(success);
 }
-
+#if defined(EXERCISM_RUN_ALL_TESTS)
 TEST_CASE("Check non-class functions", "[task_4]") {
     heaven::Vessel bob1{"Bob", 1, star_map::System::AlphaCentauri};
     heaven::Vessel marv{"Marvin", 2, star_map::System::DeltaEridani};
