@@ -7,9 +7,7 @@ namespace vehicle_purchase
     // vehicle. Only "car" and "truck" require a license.
     bool needs_license(std::string kind)
     {
-        if ("car" == kind)
-            return true;
-        else if ("truck" == kind)
+        if (("car" == kind) || ("truck" == kind)) 
             return true;
         else
             return false;
@@ -20,7 +18,7 @@ namespace vehicle_purchase
     std::string choose_vehicle(std::string option1, std::string option2)
     {
 
-        std::string remark{" is clearly the better choice."};
+        const std::string remark{" is clearly the better choice."};
         // Return lower value due to lex order
         if (option1 > option2)
             return option2 + remark;
@@ -35,9 +33,11 @@ namespace vehicle_purchase
         //At least 10 years
         if (10 <= age)
             return original_price * 0.5;
-        // Less than 10 but more than 3.
+
+        // Between above and more than 3.
         else if (3 < age)
             return original_price * 0.7;
+        
         // Less than 3
         else
             return original_price * 0.8;
