@@ -30,7 +30,7 @@ TEST_CASE("Check buster mechanics", "[task_3]") {
     success = bob6.shoot_buster();
     REQUIRE_FALSE(success);
 }
-#if defined(EXERCISM_RUN_ALL_TESTS)
+
 TEST_CASE("Check non-class functions", "[task_4]") {
     heaven::Vessel bob1{"Bob", 1, star_map::System::AlphaCentauri};
     heaven::Vessel marv{"Marvin", 2, star_map::System::DeltaEridani};
@@ -41,5 +41,5 @@ TEST_CASE("Check non-class functions", "[task_4]") {
     REQUIRE(heaven::in_the_same_system(marv, milo));
     REQUIRE_FALSE(heaven::in_the_same_system(marv, howie));
 }
-
+#if defined(EXERCISM_RUN_ALL_TESTS)
 #endif
