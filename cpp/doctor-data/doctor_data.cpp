@@ -15,7 +15,7 @@ heaven::Vessel heaven::Vessel::replicate(std::string name)
 {
     Vessel clone = *this;
     clone.name = name;
-    clone.generation += 1;
+    clone.generation = this->generation + 1;
     return clone;
 }
 
@@ -37,6 +37,7 @@ bool heaven::Vessel::shoot_buster()
 
 std::string heaven::get_older_bob(Vessel vessel1, Vessel vessel2)
 {
+    //Possible that n could be generation, but there are not enough test cases to confirm this
     if (vessel1.n < vessel2.n )
     {
         return vessel1.name;

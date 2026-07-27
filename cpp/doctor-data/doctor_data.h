@@ -29,7 +29,7 @@ namespace heaven
         
         public:
         std::string name;
-        int n;
+        int n; //Not enough test to determine that the second parameter is actually "generation" 
         int generation{1};
         star_map::System current_system;
         int busters{0};
