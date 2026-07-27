@@ -16,6 +16,7 @@ namespace star_map
         Sol,
         AlphaCentauri,
         DeltaEridani,
+        EpsilonEridani,
         Omicron2Eridani
     };
 }
@@ -31,12 +32,14 @@ namespace heaven
         public:
         int generation{1};
         star_map::System current_system;
+        int busters{0};
  
         //Vessel (std::string name, int n)
         //{};
         Vessel (std::string name, int n, star_map::System a_star = star_map::System::Sol);
-
         Vessel replicate (std::string);
+        bool shoot_buster();
+        void make_buster();
     };
 } // namespace heaven
 

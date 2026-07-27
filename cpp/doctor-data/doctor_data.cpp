@@ -6,18 +6,31 @@ hp2,öjmpö.
 */
 #include "doctor_data.h"
 
- 
-        //Vessel (std::string name, int n)
-        //{};
-        heaven::Vessel::Vessel (std::string name, int n, star_map::System a_star)
-            : name_(std::move(name)), n_(n), current_system(a_star)
-        {};
+// Vessel (std::string name, int n)
+//{};
+heaven::Vessel::Vessel(std::string name, int n, star_map::System a_star)
+    : name_(std::move(name)), n_(n), current_system(a_star) {};
 
-        heaven::Vessel heaven::Vessel::replicate (std::string name)
-        {
-            Vessel clone = *this;
-            clone.name_ = name;
-            clone.generation += 1;
-            return clone;
-            
-        }
+heaven::Vessel heaven::Vessel::replicate(std::string name)
+{
+    Vessel clone = *this;
+    clone.name_ = name;
+    clone.generation += 1;
+    return clone;
+}
+
+void heaven::Vessel::make_buster()
+{
+    busters += 1;
+}
+
+bool heaven::Vessel::shoot_buster()
+{
+    if (0 < busters) 
+    {
+        busters -= 1;
+        return true;
+    }
+    else
+        return false;
+}
