@@ -10,7 +10,7 @@ TEST_CASE("Create different probes", "[task_1]") {
     heaven::Vessel will{"Riker", 2, star_map::System::BetaHydri};
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
+
 
 TEST_CASE("Create drone from replication", "[task_2]") {
     heaven::Vessel bob{"Robert Johansson", 1};
@@ -18,7 +18,7 @@ TEST_CASE("Create drone from replication", "[task_2]") {
     REQUIRE(bob5.current_system == star_map::System::Sol);
     REQUIRE(bob5.generation == 2);
 }
-
+#if defined(EXERCISM_RUN_ALL_TESTS)
 TEST_CASE("Check buster mechanics", "[task_3]") {
     heaven::Vessel bob6{"Homer", 3, star_map::System::EpsilonEridani};
     REQUIRE(bob6.busters == 0);
