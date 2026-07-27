@@ -12,7 +12,11 @@
 namespace star_map
 {
     enum class System {
-        BetaHydri
+        BetaHydri,
+        Sol,
+        AlphaCentauri,
+        DeltaEridani,
+        Omicron2Eridani
     };
 }
 
@@ -21,14 +25,18 @@ namespace heaven
     class Vessel
     {
         private:
+        std::string name_;
+        int n_;
 
         public:
-        Vessel (std::string name, int n)
-        {};
-        Vessel (std::string name, int n, star_map::System a_star)
-        {};
+        int generation{1};
+        star_map::System current_system;
+ 
+        //Vessel (std::string name, int n)
+        //{};
+        Vessel (std::string name, int n, star_map::System a_star = star_map::System::Sol);
 
-
+        Vessel replicate (std::string);
     };
 } // namespace heaven
 
