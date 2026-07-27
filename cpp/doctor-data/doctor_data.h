@@ -26,20 +26,23 @@ namespace heaven
     class Vessel
     {
         private:
-        std::string name_;
-        int n_;
-
+        
         public:
+        std::string name;
+        int n;
         int generation{1};
         star_map::System current_system;
         int busters{0};
  
-        //Vessel (std::string name, int n)
-        //{};
         Vessel (std::string name, int n, star_map::System a_star = star_map::System::Sol);
         Vessel replicate (std::string);
         bool shoot_buster();
         void make_buster();
+
     };
+
+    std::string get_older_bob(Vessel vessel1, Vessel vessel2);
+    bool in_the_same_system(Vessel vessel1, Vessel vessel2);
+
 } // namespace heaven
 
